@@ -15,9 +15,8 @@ module.exports = {
   expiresIn: "1 day",
 
   mongo: {
-    url: "mongodb://localhost:27017/",
+    url: "mongodb+srv://artem:EGORletov2312@cluster0.r7uqw.mongodb.net/Chatik?retryWrites=true&w=majority",
     options: {
-      dbName: "chatik",
       useNewUrlParser: true,
       useUnifiedTopology: true
     }

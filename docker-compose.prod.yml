@@ -1,0 +1,25 @@
+version: '1'
+
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: dockerfile
+    restart: unless-stopped
+    container_name: webapp
+    volumes:
+      - C:/Users/Nikto/Desktop/3web:/var/uploads  
+    environment: 
+      - MONGO_URL = mongodb+srv://artem:EGORletov2312@cluster0.r7uqw.mongodb.net/Chatik?retryWrites=true&w=majority
+      - NODE_ENV = production
+      - UPLOADS_DIR = /var/uploads
+      - SESSION_SECRET = 123d123d123dawe2213
+      - PORT = 8080
+    networks:
+      -webappnetwork
+    ports: 
+      - '8080'
+
+networks:
+  webappnetwork:
+    driver:bridge
